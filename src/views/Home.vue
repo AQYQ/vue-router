@@ -5,15 +5,15 @@
             <ul class="nav">
                 <li><router-link to="/home/computer">笔记本电脑</router-link></li>
                 <li><router-link to="/home/mobilephone">手机</router-link></li>
-                <li><router-link to="/computer">服饰</router-link></li>
-                <li><router-link to="/computer">手表</router-link></li>
-                <li><router-link to="/computer">书籍</router-link></li>
-                <li><router-link to="/computer">玩具</router-link></li>
-                <li><router-link to="/computer">小家电</router-link></li>
-                <li><router-link to="/computer">学习用品</router-link></li>
-                <li><router-link to="/computer">办公用品</router-link></li>
-                <li><router-link to="/computer">旅游必备</router-link></li>
-                <li><router-link to="/computer">游戏卡通</router-link></li>
+                <li><router-link to="/home/apparel">服饰</router-link></li>
+                <li><router-link to="/home/watch">手表</router-link></li>
+                <li><router-link to="/home/books">书籍</router-link></li>
+                <li><router-link to="/home/toies">玩具</router-link></li>
+                <li><router-link to="/home/homeappliances">小家电</router-link></li>
+                <li><router-link to="/home/schoolsupplies">学习用品</router-link></li>
+                <li><router-link to="/home/officesupplies">办公用品</router-link></li>
+                <li><router-link to="/home/travel">旅游必备</router-link></li>
+                <li><router-link to="/home/watch">游戏卡通</router-link></li>
             </ul>
         </div>
         <div class="banner">
@@ -25,8 +25,15 @@
     </div>
 </template>
 <script>
+import $ from 'jquery'
 export default {
-    
+    created(){
+        console.log('created------------');
+    },
+    mounted(){
+        console.log('mounted------------');
+    }
+
 }
 </script>
 <style>
@@ -60,6 +67,9 @@ export default {
     .nav a{
         text-decoration: none;
         color: #000000;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
     }
     .nav li:first-of-type{
         margin-top: 0;
