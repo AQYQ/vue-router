@@ -19,7 +19,7 @@
         <div class="banner">
             <el-carousel :interval="3000" type="card" height="300px">
                 <el-carousel-item v-for="item in 6" :key="item">
-                    <h3 class="medium">{{ item*10 }}</h3>
+                    <h3 class="medium">{{ item*100 }}</h3>
                 </el-carousel-item>
             </el-carousel>
         </div>
