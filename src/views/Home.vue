@@ -17,11 +17,11 @@
             </ul>
         </div>
         <div class="banner">
-            <el-carousel :interval="3000" type="card" height="200px">
-            <el-carousel-item v-for="item in 6" :key="item">
-              <h3 class="medium">{{ item }}</h3>
-            </el-carousel-item>
-          </el-carousel>
+            <el-carousel :interval="3000" type="card" height="300px">
+                <el-carousel-item v-for="item in 6" :key="item">
+                    <h3 class="medium">{{ item*10 }}</h3>
+                </el-carousel-item>
+            </el-carousel>
         </div>
         <div class="goods">
             <router-view></router-view>
@@ -88,9 +88,9 @@ export default {
     }
     .el-carousel__item h3 {
         color: #475669;
-        font-size: 14px;
+        font-size: 30px;
         opacity: 0.75;
-        line-height: 200px;
+        line-height: 300px;
         margin: 0;
     }
     .el-carousel__item:nth-child(2n) {
