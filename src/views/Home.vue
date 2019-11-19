@@ -17,11 +17,16 @@
             </ul>
         </div>
         <div class="banner">
-            <el-carousel :interval="3000" type="card" height="200px">
-            <el-carousel-item v-for="item in 6" :key="item">
-              <h3 class="medium">{{ item }}</h3>
-            </el-carousel-item>
-          </el-carousel>
+            <el-carousel 
+                :interval="3000"
+                type="card"
+                height="300px"
+                trigger="click"
+            >
+                <el-carousel-item v-for="item in imgurl" :key="item">
+                    <img :src="item">
+                </el-carousel-item>
+            </el-carousel>
         </div>
         <div class="goods">
             <router-view></router-view>
@@ -30,6 +35,18 @@
 </template>
 <script>
 export default {
+    data () {
+        return{
+            imgurl:[
+                '../../../img/banner/banner1.jpg',
+                '../../../img/banner/banner2.jpg',
+                '../../../img/banner/banner3.jpg',
+                '../../../img/banner/banner4.jpg',
+                '../../../img/banner/banner5.jpg',
+                '../../../img/banner/banner6.jpg'
+            ]
+        }
+    },
     created(){
         console.log('created------------');
     },
@@ -86,12 +103,9 @@ export default {
         width: 1050px;
         background-color: red;
     }
-    .el-carousel__item h3 {
-        color: #475669;
-        font-size: 14px;
-        opacity: 0.75;
-        line-height: 200px;
-        margin: 0;
+    .el-carousel__item img {
+        width: 100%;
+        height: 100%;
     }
     .el-carousel__item:nth-child(2n) {
         background-color: #99a9bf;
