@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="duanzi" v-for="(item,index) in duanzi" :key="index">
-            <span>{{item.text}}</span>
+        <div class="duanzi">
+            <span>{{duanzi.text}}</span>
         </div>
     </div>
 </template>
@@ -23,6 +23,7 @@ export default {
             .then(res=>{
                 _this.duanzi = res.data.result;
                 console.log(res.data.result.text);
+                console.log(res)
             }).catch(err=>{
                 console.log(err)
             })
