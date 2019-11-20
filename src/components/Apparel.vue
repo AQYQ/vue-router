@@ -1,5 +1,32 @@
 <template>
     <div>
-        我是服饰组件
+        <div class="duanzi" v-for="(item,index) in duanzi" :key="index">
+            <span>{{item.text}}</span>
+        </div>
     </div>
 </template>
+
+<script>
+export default {
+    data () {
+        return{
+            duanzi:{}
+        }
+    },
+    created () {
+        this.duanZiApi();
+    },
+    methods:{
+        duanZiApi(){
+            const _this = this;
+            this.$http.get("https://api.apiopen.top/getSingleJoke?sid=28654780")
+            .then(res=>{
+                _this.duanzi = res.data.result;
+                console.log(res.data.result.text);
+            }).catch(err=>{
+                console.log(err)
+            })
+        }
+    }
+}
+</script>
