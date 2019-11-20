@@ -101,7 +101,7 @@ export default {
     .goods{
         float: left;
         width: 1050px;
-        background-color: red;
+        /* background-color: red; */
     }
     .el-carousel__item img {
         width: 100%;
