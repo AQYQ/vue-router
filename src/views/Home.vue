@@ -13,7 +13,7 @@
                 <li><router-link to="/home/schoolsupplies">学习用品</router-link></li>
                 <li><router-link to="/home/officesupplies">办公用品</router-link></li>
                 <li><router-link to="/home/travel">旅游必备</router-link></li>
-                <li><router-link to="/home/watch">游戏卡通</router-link></li>
+                <li><router-link to="/home/gamecartoon">游戏卡通</router-link></li>
             </ul>
         </div>
         <div class="banner">
