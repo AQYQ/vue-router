@@ -3,7 +3,12 @@
         <div class="left">
             <div class="title">热门推荐</div>
             <ul class="nav">
-                <li :class="{'choosen':isActive==0?true:false}">
+                <li v-for="(item,index) in routeList" :class="{'choosen':isActive== index ? true : false}">
+                    <router-link :to="item.to">
+                        {{item.name}}
+                    </router-link>
+                </li>
+                <!-- <li :class="{'choosen':isActive==0?true:false}">
                     <router-link to="/home/computer">笔记本电脑</router-link>
                 </li>
                 <li :class="{'choosen':isActive==1?true:false}">
@@ -35,7 +40,7 @@
                 </li>
                 <li :class="{'choosen':isActive==10?true:false}">
                     <router-link to="/home/gamecartoon">游戏卡通</router-link>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="banner">
@@ -56,6 +61,7 @@
     </div>
 </template>
 <script>
+import {mapState} from "vuex";
 export default {
     data () {
         return{
@@ -72,6 +78,12 @@ export default {
     },
     created(){
         console.log('created------------');
+    },
+    computed:{
+        ...mapState({
+            routeList : state => state.routeList,
+
+        })
     },
     mounted(){
         const _this = this;
