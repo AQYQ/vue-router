@@ -22,10 +22,7 @@ export default {
             this.$http.get("https://api.apiopen.top/getSingleJoke?sid=28654780")
             .then(res=>{
                 _this.duanzi = res.data.result;
-                console.log(res.data.result.text);
-                console.log(res)
             }).catch(err=>{
-                console.log(err)
             })
         }
     }

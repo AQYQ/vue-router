@@ -7,7 +7,7 @@
 export default {
     data(){
         return{
-            msg: 'Welcome to Your Vue.js App'
+            msg: '计算机'
         }
     },
     mounted(){
@@ -23,7 +23,7 @@ export default {
                     trigger: 'axis'
                 },
                 legend: {
-                    data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎'],
+                    data:['邮件营销','联盟广告','视频广告','直接访问',this.msg],
                     selected:{
                         '视频广告':false
                     },
@@ -71,7 +71,7 @@ export default {
                         data:[320, 332, 301, 334, 390, 330, 320]
                     },
                     {
-                        name:'搜索引擎',
+                        name:this.msg,
                         type:'line',
                         stack: '总量',
                         data:[820, 932, 901, 934, 1290, 1330, 1320]

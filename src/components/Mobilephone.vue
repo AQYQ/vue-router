@@ -32,7 +32,8 @@
     export default {
         data () {
             return {
-                resdata:[]
+                resdata:[],
+                code:'' // 传给兄弟组件  Apparel
             }
         },
         created () {
@@ -43,7 +44,7 @@
                 const _this=this;
                 this.$http.get("https://api.apiopen.top/getJoke?page=1&count=2&type=video").then(res=>{
                     _this.resdata = res.data.result;
-                    console.log(_this.resdata);
+                    _this.code = res.data.code;
                 }).catch(err=>{
                     
                 })
