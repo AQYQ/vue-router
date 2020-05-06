@@ -5,7 +5,8 @@
             <ul class="nav">
                 <li 
                     v-for="(item,index) in routeList"
-                    :class="{'choosen':isActive== index ? true : false}"
+                    :class="{'choosen':(isActive== index)}"
+                    :key="index"
                     @click='changeRoute(item.to)'
                 >
                     <router-link :to="item.to">
@@ -21,7 +22,7 @@
                 height="300px"
                 trigger="click"
             >
-                <el-carousel-item v-for="item in imgurl">
+                <el-carousel-item v-for="item in imgurl" :key="item">
                     <img :src="item">
                 </el-carousel-item>
             </el-carousel>

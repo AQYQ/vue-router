@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div v-for="(item,index) in resdata" class="joke">
+        <div v-for="(item,index) in resdata" class="joke" :key="index">
             <video 
                 :src="item.video"
                 controls="controls"
