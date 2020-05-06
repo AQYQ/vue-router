@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div v-for="(item,index) in resdata" :key="index" class="joke">
+        <div v-for="(item,index) in resdata" class="joke" :key="index">
             <video 
                 :src="item.video"
                 controls="controls"
@@ -32,8 +32,7 @@
     export default {
         data () {
             return {
-                resdata:[],
-                code:'' // 传给兄弟组件  Apparel
+                resdata:[]
             }
         },
         created () {
@@ -44,7 +43,7 @@
                 const _this=this;
                 this.$http.get("https://api.apiopen.top/getJoke?page=1&count=2&type=video").then(res=>{
                     _this.resdata = res.data.result;
-                    _this.code = res.data.code;
+                    _this.$store.state.code = res.data.code;
                 }).catch(err=>{
                     
                 })
