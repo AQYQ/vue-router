@@ -2,16 +2,25 @@
     <div>
         <div class="duanzi">
             <span>{{duanzi.text}}</span>
+            <br>
+            <span>{{code}}</span>
         </div>
     </div>
 </template>
 
 <script>
+import {mapState, Store} from "vuex";
 export default {
     data () {
         return{
             duanzi:{}
         }
+    },
+    computed:{
+        ...mapState({
+            code : state => state.code,
+
+        })
     },
     created () {
         this.duanZiApi();

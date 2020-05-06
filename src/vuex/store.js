@@ -50,7 +50,8 @@ const store =  new Vuex.Store({
                 name:'游戏卡通',
                 to:'/home/gamecartoon'
             }
-        ]
+        ],
+        code:Number
     },
     mutations:{
 
